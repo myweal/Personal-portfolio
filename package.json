@@ -2,7 +2,7 @@
   "name": "vue-personal-show",
   "version": "1.0.0",
   "description": "My personal show project",
-  "author": "liushanshan <liushanshan@csii.com.cn>",
+  "author": "myweal <my_weal@126.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
