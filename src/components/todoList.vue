@@ -20,9 +20,12 @@
       </tr>
       </tbody>
     </table>
+    <counter></counter>
   </div>
 </template>
 <script>
+import counter from '@/components/common/counter'
+
 export default {
   data () {
     return {
@@ -35,13 +38,8 @@ export default {
     goDetail: function (id) {
       this.$router.push('/detail/' + id)
     }
-  }
+  },
+  components: { counter }
 }
-</script>
-<!--全局样式-->
-<style>
-  @import 'https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css';
-</style>
-<style scoped>
 
-</style>
+</script>

@@ -5,6 +5,20 @@ import App from './App'
 import router from './router'
 import Header from '@/components/common/header'
 
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+const store = new Vuex.Store({
+  state: {
+    count: 0
+  },
+  mutations: {
+    increment (state) {
+      state.count++
+    }
+  }
+})
 Vue.config.productionTip = false
 // 注册
 Vue.component('Header', Header)
@@ -12,6 +26,7 @@ Vue.component('Header', Header)
 new Vue({
   el: '#app',
   router,
+  store,
   data: {
     items: [
       { message: 'Foo' },
