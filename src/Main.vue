@@ -12,3 +12,4 @@ export default {
   }
 }
 </script>
+<style src="@/assets/css/bootstrap.min.css"></style>

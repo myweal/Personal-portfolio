@@ -1,6 +1,6 @@
 <template>
 <header>
-  <div class="header_img text-left" @click="goBack" v-if="!hideFlag">
+  <div class="header_img text-left" @click="goBack" v-if="hideFlag!=='true'">
     <img src="@/assets/images/back.png" alt="回退按钮"/>
   </div>
   <div class="row header_title text-center">

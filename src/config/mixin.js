@@ -9,6 +9,9 @@ Vue.mixin({
         options.showFlag = true
       }
       this.$root.alertOptions = options
+    },
+    goto: function (state) {
+      this.$router.push(state)
     }
   }
 })

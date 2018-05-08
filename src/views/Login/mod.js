@@ -35,9 +35,9 @@ export default {
       var $this = this
       $this.errors.items.forEach(function (value, index) {
         $this.alert(value.msg)
+        return false
       })
-      console.log(this.errors)
-      console.log(this.user)
+      $this.goto('/list')
     }
   }
 
