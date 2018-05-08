@@ -1,40 +1,17 @@
 <template>
-  <div id="app">
-    <router-view/>
-    <alert :options="alertOptions"></alert>
+  <div id="appId">
+    <div class="main">
+    <router-view></router-view>
+    </div>
+    <div class="footer">
+      <a href="tel:95555">95555</a>
+    </div>
   </div>
 </template>
 <script>
-import Alert from '@/components/common/Alert'
 export default {
-  name: 'App',
-  props: ['alertOptions'],
-  computed: {
-    errorId () {
-      return this.$store.state.errorId
-    },
-    content () {
-      return this.$store.state.content
-    }
-  },
-  metaInfo: {
-    title: 'My Example App', // set a title
-    titleTemplate: '%s - Yay!', // title is now "My Example App - Yay!"
-    htmlAttrs: {
-      lang: 'zh'
-    },
-    meta: [
-      {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1, maximum-scale=1,shrink-to-fit=no,user-scalable=no'
-      }
-    ]
-  },
-  components: { Alert },
-  watch: {
-    alertOptions: function (newVal) {
-      this.alertOptions = newVal !== undefined ? newVal : this.alertOptions
-    }
+  mounted: function () {
+    console.log('app mounted')
   }
 }
 </script>
@@ -47,3 +24,18 @@ export default {
 </style>
 <!--全局样式-->
 <style src="@/assets/css/bootstrap.min.css"></style>
+<style scoped>
+  .footer{
+    text-align: center;
+    position:absolute;
+    bottom:2rem;
+    width: 100%;
+  }
+  .main{
+    min-height: 100vh;
+    padding-bottom: 5rem;
+  }
+  #appId{
+    position: relative;
+  }
+</style>

@@ -1,9 +1,10 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import App from './App'
+// import App from './App'
 import router from './router'
 import Header from '@/components/common/header'
+import Alert from '@/components/common/Alert'
 
 import Vuex from 'vuex'
 import VeeValidate from 'vee-validate'
@@ -37,19 +38,18 @@ const store = new Vuex.Store({
 Vue.config.productionTip = false
 // 全局注册
 Vue.component('Header', Header)
-
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
+  el: '#appId',
   router,
   store,
   data: {
     alertOptions: null
   },
-  components: { App, Header },
-  template: '<App :alertOptions="alertOptions"/>'
+  components: { Alert },
+  watch: {
+    alertOptions: function (newVal) {
+      this.alertOptions = newVal !== undefined ? newVal : this.alertOptions
+    }
+  }
 })
-// content: {
-//   title: '温馨提示',
-//     message: ''
-// },

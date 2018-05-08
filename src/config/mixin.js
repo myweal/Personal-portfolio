@@ -8,7 +8,6 @@ Vue.mixin({
         options.message = option
         options.showFlag = true
       }
-      debugger
       this.$root.alertOptions = options
     }
   }
