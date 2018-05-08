@@ -6,33 +6,50 @@ import router from './router'
 import Header from '@/components/common/header'
 
 import Vuex from 'vuex'
+import VeeValidate from 'vee-validate'
 
 Vue.use(Vuex)
+Vue.use(VeeValidate)
+// 定义全局方法
+require('./config/mixin')
 
 const store = new Vuex.Store({
   state: {
-    count: 0
+    count: 0,
+    errorId: false,
+    content: {
+      title: '温馨提示',
+      message: ''
+    }
   },
   mutations: {
     increment (state) {
       state.count++
+    },
+    showError (state) {
+      state.errorId = true
+    },
+    hideError (state) {
+      state.errorId = false
     }
   }
 })
 Vue.config.productionTip = false
-// 注册
+// 全局注册
 Vue.component('Header', Header)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   store,
   data: {
-    items: [
-      { message: 'Foo' },
-      { message: 'Bar' }
-    ]
+    alertOptions: null
   },
   components: { App, Header },
-  template: '<App/>'
+  template: '<App :alertOptions="alertOptions"/>'
 })
+// content: {
+//   title: '温馨提示',
+//     message: ''
+// },
